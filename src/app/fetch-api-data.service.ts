@@ -17,19 +17,19 @@ export class FetchApiDataService {
   constructor(private http: HttpClient) { }
 
   // calls API endpoint to register a new user
-  public userRegistration(userDetails: any): Observable<any> {
-    console.log(userDetails);
+  public userRegistration(userData: any): Observable<any> {
+    console.log(userData);
     return this.http
-      .post(apiUrl + "users", userDetails)
+      .post(apiUrl + "users", userData)
       .pipe(
         catchError(this.handleError)
       );
   }
 
   // calls API endpoint to login an existing user
-  public userLogin(userDetails: any): Observable<any> {
+  public userLogin(userData: any): Observable<any> {
     return this.http
-      .post(apiUrl + "login", userDetails)
+      .post(apiUrl + "login", userData)
       .pipe(
         catchError(this.handleError)
       );
