@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { catchError } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, retry } from 'rxjs/operators';
 
 //Declaring the api url that will provide data for the client app
 const apiUrl = "https://movies2022app.herokuapp.com/";
@@ -20,8 +20,9 @@ export class FetchApiDataService {
   public userRegistration(userData: any): Observable<any> {
     console.log(userData);
     return this.http
-      .post(apiUrl + "users", userData)
+      .post(apiUrl + "users/register", userData)
       .pipe(
+        retry(3),  // Retry up to 3 times before failing
         catchError(this.handleError)
       );
   }
@@ -200,7 +201,7 @@ export class FetchApiDataService {
       );
     }
     return throwError(
-      "Something happened, please try again later"
+      "Something happened, please try again later:" + error
     );
   }
 
