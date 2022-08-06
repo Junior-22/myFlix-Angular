@@ -28,9 +28,10 @@ export class FetchApiDataService {
   }
 
   // calls API endpoint to login an existing user
-  public userLogin(userData: any): Observable<any> {
+  public userLogin(userLoginData: any): Observable<any> {
+    console.log(userLoginData);
     return this.http
-      .post(apiUrl + "login", userData)
+      .post(apiUrl + "login", null, userLoginData)
       .pipe(
         catchError(this.handleError)
       );
