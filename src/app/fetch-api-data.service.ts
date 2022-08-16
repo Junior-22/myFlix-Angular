@@ -29,9 +29,24 @@ export class FetchApiDataService {
 
   // calls API endpoint to login an existing user
   public userLogin(userLoginData: any): Observable<any> {
-    console.log(userLoginData);
+    console.log('usercredentials input: ', userLoginData);
+
+    // convert login data to json because of API (due to recent problem with Angular 14)
+    let options = {
+      headers: new HttpHeaders().set(
+        'Content-Type',
+        'application/x-www-form-urlencoded'
+      ),
+    };
+
+    let formData = new URLSearchParams();
+
+    //var formData: any = new FormData();
+    formData.set('Username', userLoginData.Username);
+    formData.set('Password', userLoginData.Password);
+
     return this.http
-      .post(apiUrl + "login", userLoginData)
+      .post(apiUrl + "login", formData, options)
       .pipe(
         catchError(this.handleError)
       );
