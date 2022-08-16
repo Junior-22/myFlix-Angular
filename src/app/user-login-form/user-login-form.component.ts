@@ -32,9 +32,11 @@ export class UserLoginFormComponent implements OnInit {
     this.fetchApiData.userLogin(this.userLoginData).subscribe((result) => {
       this.dialogRef.close();  // close the modal on success
       console.log(result);
+
       // add token and username to local Storage
       localStorage.setItem("token", result.token);
       localStorage.setItem("user", result.user.Username)
+
       // redirect to movies
       this.router.navigate(["movies"]);
     }, (result) => {
