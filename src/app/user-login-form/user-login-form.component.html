@@ -1,9 +1,9 @@
-<mat-card>
+<mat-card class="login-dialog">
   <mat-card-header>
-    <mat-card-title>Login</mat-card-title>
+    <mat-card-title class="login-dialog-title">Login</mat-card-title>
   </mat-card-header>
 
-  <mat-card-content>
+  <mat-card-content class="login-dialog-content">
     <form>
       <mat-form-field>
         <input matInput [(ngModel)]="userLoginData.Username" placeholder="Username" type="text" name="Username"
@@ -16,8 +16,12 @@
     </form>
   </mat-card-content>
 
-  <mat-card-actions>
+  <mat-card-actions class="login-actions">
     <button mat-raised-button (click)="loginUser()" color="primary">Login</button>
+    <button class="login-close-button" mat-stroked-button aria-label="Close the login details" mat-dialog-close
+      color="primary">
+      X
+    </button>
   </mat-card-actions>
 
 </mat-card>
