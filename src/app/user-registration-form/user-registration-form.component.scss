@@ -1,0 +1,38 @@
+$backgroundColor: #588193;
+$cardColor: #93a689;
+$textColor: #000;
+$boxShadowColor: #e9ecef;
+
+.signup-dialog {
+  background-color: $cardColor;
+  margin-top: 0px;
+  box-shadow: none;
+}
+
+.signup-dialog-title {
+  color: $textColor;
+}
+
+.signup-dialog-content {
+  color: $textColor;
+}
+
+::ng-deep .signup-custom>mat-dialog-container {
+  background-color: $cardColor;
+}
+
+.signup-actions {
+  display: flex
+}
+
+.signup-close-button.mat-stroked-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  line-height: 14px;
+  min-width: auto;
+  border: none;
+  font-size: 20px;
+  color: #000;
+}

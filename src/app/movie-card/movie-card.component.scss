@@ -1,5 +1,5 @@
-$backgroundColor: #f8f9fa;
-$cardColor: #fff;
+$backgroundColor: #588193;
+$cardColor: #93a689;
 $textColor: #343a40;
 $boxShadowColor: #e9ecef;
 
@@ -10,4 +10,45 @@ $boxShadowColor: #e9ecef;
   justify-content: center;
   padding: 50px 0;
   background-color: $backgroundColor;
+}
+
+.mat-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 10px 5px 5px $boxShadowColor;
+  background-color: $cardColor;
+  max-width: 350px;
+  width: 3500px;
+  margin: 15px;
+  padding: 20px 3px;
+}
+
+.mat-card-header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  color: $textColor;
+}
+
+.movies-title {
+  display: flex;
+  max-width: 210px;
+  justify-content: center;
+  text-align: center;
+  line-height: normal;
+}
+
+img {
+  width: 350px;
+  height: 350px;
+  object-fit: contain;
+}
+
+.mat-icon-button {
+  position: absolute;
+  right: 5px;
+  top: 5px;
 }
