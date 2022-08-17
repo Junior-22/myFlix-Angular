@@ -1,0 +1,13 @@
+$backgroundColor: #f8f9fa;
+$cardColor: #fff;
+$textColor: #343a40;
+$boxShadowColor: #e9ecef;
+
+.movie-view {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 50px 0;
+  background-color: $backgroundColor;
+}
