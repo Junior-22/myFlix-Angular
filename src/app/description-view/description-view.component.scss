@@ -1,10 +1,10 @@
-$backgroundColor: #f8f9fa;
-$cardColor: #5f3870;
-$textColor: #fff;
-$boxShadowColor: #270435;
+$backgroundColor: #588193;
+$cardColor: #93a689;
+$textColor: #000;
+$boxShadowColor: #e9ecef;
 
 .description-dialog {
-  background-color: $cardColor;
+  background-color: $backgroundColor;
   margin-top: 0px;
   box-shadow: none;
 }
@@ -25,10 +25,10 @@ $boxShadowColor: #270435;
   position: absolute;
   top: 0;
   right: 0;
-  padding: 0px;
+  padding: 10px;
   line-height: 14px;
   min-width: auto;
   border: none;
   font-size: 20px;
-  color: yellow;
+  color: #000;
 }
