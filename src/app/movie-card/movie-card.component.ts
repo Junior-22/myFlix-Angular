@@ -16,6 +16,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class MovieCardComponent implements OnInit {
 
   movies: any[] = [];
+  // user: any[] = [];
+  // currentUser: any = null;
   favoriteMovies: any[] = [];
 
   constructor(
@@ -26,7 +28,8 @@ export class MovieCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMovies();
-    this.getFavoriteMovies();
+    // this.getUser();
+    // this.getFavoriteMovies();
   }
 
   getMovies(): void {
@@ -66,13 +69,21 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
-  getFavoriteMovies(): void {
-    this.fetchApiData.getFavoriteMovies().subscribe((resp: any) => {
-      this.favoriteMovies = resp;
-      console.log(this.favoriteMovies);
-      return this.favoriteMovies;
-    });
-  }
+  // getFavoriteMovies(): void {
+  //   this.fetchApiData.getFavoriteMovies().subscribe((resp: any) => {
+  //     this.favoriteMovies = resp;
+  //     console.log(this.favoriteMovies);
+  //     return this.favoriteMovies;
+  //   });
+  // }
+
+  // getUser(): void {
+  //   const username = localStorage.getItem("user");
+  //   this.fetchApiData.getUser().subscribe((resp: any) => {
+  //     this.currentUser = resp.Username;
+  //     this.favoriteMovies = resp.favoriteMovies;
+  //   })
+  // }
 
   // checks if a movie is included in the user's list of favorite movies
   isFav(id: string): boolean {
@@ -81,6 +92,7 @@ export class MovieCardComponent implements OnInit {
 
   addToFavoriteMovies(id: string): void {
     console.log(id);
+    console.log("movie added");
     this.fetchApiData.addFavoriteMovie(id).subscribe((result) => {
       console.log(result);
       this.ngOnInit();
@@ -89,6 +101,7 @@ export class MovieCardComponent implements OnInit {
 
   removeFromFavoriteMovies(id: string): void {
     console.log(id);
+    console.log("movie removed");
     this.fetchApiData.removeFavoriteMovie(id).subscribe((result) => {
       console.log(result);
       this.ngOnInit();

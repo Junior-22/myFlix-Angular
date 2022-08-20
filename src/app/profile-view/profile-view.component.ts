@@ -15,6 +15,12 @@ import { Router } from '@angular/router';
 export class ProfileViewComponent implements OnInit {
 
   user: any = {};
+  // new
+  movies: any[] = [];
+  username: any = localStorage.getItem("user");
+  fav: any = null;
+  favoriteMovies: any[] = [];
+  displayElement: boolean = false;
 
   constructor(
     public fetchApiData: FetchApiDataService,
@@ -27,12 +33,31 @@ export class ProfileViewComponent implements OnInit {
     this.getUser();
   }
 
+  // getUser(): void {
+  //   this.fetchApiData.getUser().subscribe((resp: any) => {
+  //     this.user = resp;
+  //     console.log(this.user);
+  //     return this.user;
+  //   })
+  // }
+
   getUser(): void {
-    this.fetchApiData.getUser().subscribe((resp: any) => {
-      this.user = resp;
-      console.log(this.user);
-      return this.user;
-    })
+    let movies: any[] = [];
+    const user = localStorage.getItem("user");
+    if (user) {
+      this.fetchApiData.getUser().subscribe((resp: any) => {
+        this.user = resp;
+        this.fetchApiData.getAllMovies().subscribe((resp: any) => {
+          this.movies = resp;
+          this.movies.forEach((movie: any) => {
+            if (this.user.favoriteMovies.includes(movie._id)) {
+              this.favoriteMovies.push(movie);
+              this.displayElement = true;
+            }
+          })
+        })
+      })
+    }
   }
 
   openEditProfileDialog(): void {
@@ -41,11 +66,25 @@ export class ProfileViewComponent implements OnInit {
     })
   }
 
+  // new
+  removeFavMovie(id: string): void {
+    console.log(id);
+    console.log("movie removed");
+    this.fetchApiData.removeFavoriteMovie(id).subscribe((res: any) => {
+      this.snackbar.open("Successfully removed", "OK", {
+        duration: 6000,
+      });
+      this.ngOnInit();
+      window.location.reload();
+      return this.fav;
+    });
+  }
+
   deleteProfile(): void {
     if (confirm("Account cannot be restored once deleted")) {
       this.router.navigate(["welcome"]).then(() => {
         this.snackbar.open("Account successfully deleted", "OK", {
-          duration: 2000
+          duration: 6000
         });
       })
       this.fetchApiData.deleteUser().subscribe((result) => {
