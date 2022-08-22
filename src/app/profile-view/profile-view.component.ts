@@ -42,7 +42,7 @@ export class ProfileViewComponent implements OnInit {
   // }
 
   getUser(): void {
-    let movies: any[] = [];
+    // let movies: any[] = [];
     const user = localStorage.getItem("user");
     if (user) {
       this.fetchApiData.getUser().subscribe((resp: any) => {
@@ -50,7 +50,7 @@ export class ProfileViewComponent implements OnInit {
         this.fetchApiData.getAllMovies().subscribe((resp: any) => {
           this.movies = resp;
           this.movies.forEach((movie: any) => {
-            if (this.user.favoriteMovies.includes(movie._id)) {
+            if (this.user.FavouriteMovies.includes(movie._id)) {
               this.favoriteMovies.push(movie);
               this.displayElement = true;
             }
