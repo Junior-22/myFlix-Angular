@@ -1,7 +1,7 @@
 <!-- display navbar view -->
 <app-navbar-view></app-navbar-view>
 
-<div class="user-profile-page">
+<div class="user-profile-page" style="display: flex;">
   <!-- user profile -->
   <mat-card class="user-profile-card">
     <mat-card-header class="user-profile-card-header">
@@ -36,15 +36,15 @@
   <div>
     <h2>Favourite Movies</h2>
     <div *ngIf="displayElement; else message">
-      <mat-card *ngFor="let movie of favoriteMovies; let i = index">
+      <mat-card *ngFor="let movie of favoriteMovies; let i = index" style="flex: 1 1 auto;" class="user-profile-card">
         <mat-card-header>
           <mat-card-title>{{movie.Title}}</mat-card-title>
         </mat-card-header>
 
         <img src={{movie.ImagePath}} alt="{{movie.Title}}" style="width: 350px;" />
 
-        <button mat-button (click)="removeFavMovie(movie._id)" color="primary">
-          <mat-icon (click)="removeFavMovie(movie._id)">favorite</mat-icon> Remove
+        <button mat-raised-button (click)="removeFavMovie(movie._id)" color="warn">
+          <mat-icon>favorite</mat-icon> Remove
         </button>
 
       </mat-card>
