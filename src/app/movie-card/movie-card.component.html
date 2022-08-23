@@ -4,8 +4,9 @@
 <div class="movie-view" style="display: flex;">
   <!-- ngFor is used to display movies in its own card -->
   <mat-card *ngFor="let movie of movies; let i=index" style="flex: 1 1 auto;">
-    <mat-card-header>
+    <mat-card-header class="card-header">
       <mat-card-title>{{movie.Title}}</mat-card-title>
+      <mat-card-subtitle>{{movie.Year}}</mat-card-subtitle>
     </mat-card-header>
 
     <img src={{movie.ImagePath}} alt="{{movie.Title}}" style="width: 350px;" />
