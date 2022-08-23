@@ -170,7 +170,7 @@ ng add angular-cli-ghpages.
 
 4. Build your application (i.e., generate static HTML, CSS, and JavaScript files out of your application so that browsers can interpret them without the need to use any extra tools/plugins). To do so, run the following command, replacing it with your repository name:
 
-ng deploy --base-href=/<repository-name>/
+ng deploy --base-href=/repository-name/
 
 **Add TypeDoc Documentation**
 
