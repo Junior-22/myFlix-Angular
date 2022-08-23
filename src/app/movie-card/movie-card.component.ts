@@ -16,8 +16,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class MovieCardComponent implements OnInit {
 
   movies: any[] = [];
-  // user: any[] = [];
-  // currentUser: any = null;
   favoriteMovies: any[] = [];
 
   constructor(
@@ -28,8 +26,6 @@ export class MovieCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMovies();
-    // this.getUser();
-    // this.getFavoriteMovies();
   }
 
   getMovies(): void {
@@ -68,22 +64,6 @@ export class MovieCardComponent implements OnInit {
       width: '500px'
     });
   }
-
-  // getFavoriteMovies(): void {
-  //   this.fetchApiData.getFavoriteMovies().subscribe((resp: any) => {
-  //     this.favoriteMovies = resp;
-  //     console.log(this.favoriteMovies);
-  //     return this.favoriteMovies;
-  //   });
-  // }
-
-  // getUser(): void {
-  //   const username = localStorage.getItem("user");
-  //   this.fetchApiData.getUser().subscribe((resp: any) => {
-  //     this.currentUser = resp.Username;
-  //     this.favoriteMovies = resp.favoriteMovies;
-  //   })
-  // }
 
   // checks if a movie is included in the user's list of favorite movies
   isFav(id: string): boolean {

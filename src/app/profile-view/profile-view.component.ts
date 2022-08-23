@@ -15,7 +15,6 @@ import { Router } from '@angular/router';
 export class ProfileViewComponent implements OnInit {
 
   user: any = {};
-  // new
   movies: any[] = [];
   username: any = localStorage.getItem("user");
   fav: any = null;
@@ -33,16 +32,7 @@ export class ProfileViewComponent implements OnInit {
     this.getUser();
   }
 
-  // getUser(): void {
-  //   this.fetchApiData.getUser().subscribe((resp: any) => {
-  //     this.user = resp;
-  //     console.log(this.user);
-  //     return this.user;
-  //   })
-  // }
-
   getUser(): void {
-    // let movies: any[] = [];
     const user = localStorage.getItem("user");
     if (user) {
       this.fetchApiData.getUser().subscribe((resp: any) => {
