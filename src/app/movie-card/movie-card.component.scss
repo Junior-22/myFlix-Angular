@@ -26,20 +26,20 @@ $boxShadowColor: #e9ecef;
   padding: 20px 3px;
 }
 
-.mat-card-header {
+.card-header {
   height: 80px;
   display: flex;
   align-items: center;
   color: $textColor;
 }
 
-.movies-title {
-  display: flex;
-  max-width: 210px;
-  justify-content: center;
-  text-align: center;
-  line-height: normal;
-}
+// .movies-title {
+//   display: flex;
+//   max-width: 210px;
+//   justify-content: center;
+//   text-align: center;
+//   line-height: normal;
+// }
 
 img {
   width: 350px;
