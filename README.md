@@ -183,3 +183,5 @@ npm install typedoc
 3. Run typedoc to create documentation
 
 npx typedoc --entryPointStrategy expand ./src
+
+[Visit the site](https://junior-22.github.io/myFlix-angular/)
