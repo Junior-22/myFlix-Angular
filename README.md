@@ -61,7 +61,7 @@ This project aims to build the client-side for an application called myFlix usin
 
 ## Development Process
 
-**Install Angular**
+### Install Angular
 
 1. Check if Angular is already installed on the device
 
@@ -71,7 +71,7 @@ This project aims to build the client-side for an application called myFlix usin
 
 `npm install -g @angular/cli`
 
-**Create a new Angular project**
+## Create a new Angular project
 
 1. Open your terminal and create a project
 
@@ -81,7 +81,7 @@ This project aims to build the client-side for an application called myFlix usin
 
 `ng serve --open`
 
-**Set up the app to load data from movie API**
+## Set up the app to load data from movie API
 
 Set up Angular HttpClient 
 
@@ -116,7 +116,7 @@ import { map } from 'rxjs/operators';
 - Edit user
 - Delete user
 
-**Add Angular Material**
+## Add Angular Material
 
 1. Install project dependency
 
@@ -126,7 +126,7 @@ $ ng add @angular/material
 
 3. Add modules to imports array to serve to other components
 
-**Create  user components**
+## Create  user components
 
 Use the command
 
@@ -146,7 +146,7 @@ Structure of components:
 - Profile View
 - Edit profile dialog
 
-**Add app routing**
+## Add app routing
 
 1. Import Angular's built-in router:
 
@@ -158,7 +158,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 3. Create routes in app.module.ts
 
-**Deploy app on gh-pages**
+## Deploy app on gh-pages
 
 1. If not done yet: Create a GitHub repository for the application
 
@@ -172,7 +172,7 @@ ng add angular-cli-ghpages.
 
 ng deploy --base-href=/repository-name/
 
-**Add TypeDoc Documentation**
+## Add TypeDoc Documentation
 
 1. Install typedoc (if not yet installed)
 
