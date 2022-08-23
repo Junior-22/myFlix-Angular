@@ -27,10 +27,12 @@ export class UserLoginFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // sends form inputs for user login to backend via fetchApiData Service
+  /**
+   * sends form inputs for user login to backend via fetchApiData Service
+   */
   loginUser(): void {
     this.fetchApiData.userLogin(this.userLoginData).subscribe((result) => {
-      this.dialogRef.close();  // close the modal on success
+      this.dialogRef.close();                   // close the modal on success
       console.log(result);
 
       // add token and username to local Storage
@@ -42,7 +44,7 @@ export class UserLoginFormComponent implements OnInit {
     }, (result) => {
       console.log(result);
       this.snackBar.open(result, "OK", {
-        duration: 2000
+        duration: 6000
       });
     });
   }

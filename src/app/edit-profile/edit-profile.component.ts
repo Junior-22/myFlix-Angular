@@ -23,20 +23,23 @@ export class EditProfileComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * allow user to edit their profile info
+   */
   editUser(): void {
     console.log(this.userData);
     this.fetchApiData.editUser(this.userData).subscribe((result) => {
       this.dialogRef.close();
       console.log(result);
       this.snackbar.open("Profile updated", "OK", {
-        duration: 2000
+        duration: 6000
       });
       // let user sign in after update
       if (this.userData.Username || this.userData.Password) {
         localStorage.clear();
         this.router.navigate(["welcome"]);
         this.snackbar.open("Please login", "OK", {
-          duration: 2000
+          duration: 6000
         });
       }
     })

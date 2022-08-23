@@ -28,6 +28,11 @@ export class MovieCardComponent implements OnInit {
     this.getMovies();
   }
 
+  /**
+   * Gets movies via API call and sets the movies state to return JSON file
+   * @returns array holding movies objects
+   * @function getAllMovies
+   */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
@@ -36,6 +41,10 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+  * opens the director dialog from DirectorViewComponent to display details
+  * @param name
+  */
   openDirectorDialog(name: string): void {
     this.dialog.open(DirectorViewComponent, {
       data: {
@@ -46,6 +55,10 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+ * opens the genre dialog from GenreViewComponent to display details
+ * @param name
+ */
   openGenreDialog(name: string): void {
     this.dialog.open(GenreViewComponent, {
       data: {
@@ -55,6 +68,11 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+  * opens the description dialog from DescriptionViewComponent to display details
+  * @param title
+  * @param description
+  */
   openDescriptionDialog(title: string, description: string): void {
     this.dialog.open(DescriptionViewComponent, {
       data: {
@@ -65,11 +83,20 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
-  // checks if a movie is included in the user's list of favorite movies
+  /**
+   * checks if a movie is included in the user's list of favorite movies
+   * @param id 
+   * @returns true, it the movie is in the list, else false
+   */
   isFav(id: string): boolean {
     return this.favoriteMovies.includes(id)
   }
 
+  /**
+   * adds a movie to the list of favorite movies via an API call
+   * @param id 
+   * @function addFavoriteMovie
+   */
   addToFavoriteMovies(id: string): void {
     console.log(id);
     console.log("movie added");
@@ -79,6 +106,11 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+   * removes a movie from the list of favorite movies via an API call
+   * @param id 
+   * @function removeFavoriteMovie
+   */
   removeFromFavoriteMovies(id: string): void {
     console.log(id);
     console.log("movie removed");

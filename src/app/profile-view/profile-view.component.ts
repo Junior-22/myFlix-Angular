@@ -32,6 +32,11 @@ export class ProfileViewComponent implements OnInit {
     this.getUser();
   }
 
+  /**
+   * function to get user object AND user's favorites movies
+   * @function getUser
+   * @return user data in JSON format
+   */
   getUser(): void {
     const user = localStorage.getItem("user");
     if (user) {
@@ -50,13 +55,20 @@ export class ProfileViewComponent implements OnInit {
     }
   }
 
+  /**
+   * opens the edit profile dialog from EditProfileComponent to allow user to edit their details
+   */
   openEditProfileDialog(): void {
     this.dialog.open(EditProfileComponent, {
       width: "480px"
     })
   }
 
-  // new
+  /**
+  * function to remove favorite from user's favorite movies
+  * @function removeFavoriteMovie
+  * @param id
+  */
   removeFavMovie(id: string): void {
     console.log(id);
     console.log("movie removed");
@@ -70,6 +82,10 @@ export class ProfileViewComponent implements OnInit {
     });
   }
 
+  /**
+   * deletes the user profile, redirects to welcome screen
+   * @function deleteUser
+   */
   deleteProfile(): void {
     if (confirm("Account cannot be restored once deleted")) {
       this.router.navigate(["welcome"]).then(() => {
