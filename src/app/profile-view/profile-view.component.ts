@@ -28,6 +28,10 @@ export class ProfileViewComponent implements OnInit {
     public router: Router
   ) { }
 
+  /**
+   * Initialize the component loading the data
+   * @function ngOnInit
+  */
   ngOnInit(): void {
     this.getUser();
   }

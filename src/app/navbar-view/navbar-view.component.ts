@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-navbar-view',
@@ -9,7 +10,8 @@ import { Router } from '@angular/router';
 export class NavbarViewComponent implements OnInit {
 
   constructor(
-    public router: Router
+    public router: Router,
+    public snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -30,10 +32,14 @@ export class NavbarViewComponent implements OnInit {
   }
 
   /**
-  * logs out user, clear local storage to reset token and user
+  * logs out user 
+  * clear local storage & route to welcome page
   */
   logout(): void {
     localStorage.clear();
+    this.snackBar.open("Successfully logged out", "OK", {
+      duration: 6000
+    });
     this.router.navigate(["welcome"]);
   }
 

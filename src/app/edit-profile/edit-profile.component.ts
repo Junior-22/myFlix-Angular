@@ -24,7 +24,9 @@ export class EditProfileComponent implements OnInit {
   }
 
   /**
-   * allow user to edit their profile info
+   * Access the API sending a POST request with the new parameters to update the user profile
+   * If info is updated, logout and route to welcome
+   * @function editUser
    */
   editUser(): void {
     console.log(this.userData);
