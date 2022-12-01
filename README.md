@@ -89,20 +89,22 @@ Set up Angular HttpClient
 
 1.1. Go to app.module.ts and add
 
-import { HttpClientModule } from '@angular/common/http'
+- import { HttpClientModule } from '@angular/common/http'
 
 1.2. Add HttpClientModule to the imports of @NgModule
 
-Create Angular Service for Consuming REST API 2.1 Create a new Service inside app folder
+- Create Angular Service for Consuming REST API 
 
-ng generate service fetch-api-data-service
+2.1 Create a new Service inside app folder
+
+- ng generate service fetch-api-data-service
 
 2.2. Add import statements to fetch-api-data.service.ts file
 
-import { catchError } from 'rxjs/operators';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { map } from 'rxjs/operators';
+- import { catchError } from 'rxjs/operators';
+- import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+- import { Observable, throwError } from 'rxjs';
+- import { map } from 'rxjs/operators';
 
 3. Implement services logic to make API calls
 
@@ -122,7 +124,7 @@ import { map } from 'rxjs/operators';
 
 1. Install project dependency
 
-$ ng add @angular/material
+- $ ng add @angular/material
 
 2. Import models from Angular Material to app.module.ts
 
@@ -141,6 +143,7 @@ Structure of components:
 - User login view
 - Navbar view
 - Movie Card View
+
   Dialogs for Movie Card:
   - Director view
   - Genre view
@@ -152,11 +155,11 @@ Structure of components:
 
 1. Import Angular's built-in router:
 
-import { RouterModule, Routes } from '@angular/router';
+- import { RouterModule, Routes } from '@angular/router';
 
 2. Add to app.component.html
 
-<router-outlet></router-outlet> 
+- <router-outlet></router-outlet> 
 
 3. Create routes in app.module.ts
 
@@ -168,22 +171,22 @@ import { RouterModule, Routes } from '@angular/router';
 
 3. Add angular-cli-ghpages by running
 
-ng add angular-cli-ghpages.
+- ng add angular-cli-ghpages.
 
 4. Build your application (i.e., generate static HTML, CSS, and JavaScript files out of your application so that browsers can interpret them without the need to use any extra tools/plugins). To do so, run the following command, replacing it with your repository name:
 
-ng deploy --base-href=/repository-name/
+- ng deploy --base-href=/repository-name/
 
 ## Add TypeDoc Documentation
 
 1. Install typedoc (if not yet installed)
 
-npm install typedoc
+- npm install typedoc
 
 2. Check that code is commented adhering to best practices
 
 3. Run typedoc to create documentation
 
-npx typedoc --entryPointStrategy expand ./src
+- npx typedoc --entryPointStrategy expand ./src
 
 [Visit the site](https://junior-22.github.io/myFlix-angular/)
